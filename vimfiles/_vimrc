@@ -1,0 +1,50 @@
+map <C-J> <C-W>j30<C-W>_
+map <C-K> <C-W>k30<C-W>_
+syntax on
+filetype indent on
+filetype plugin on
+set autoindent
+set expandtab
+set smartindent
+set ignorecase  
+set nocompatible
+set tabstop=4
+set shiftwidth=4
+set showmatch
+set columns=80
+set guioptions-=T
+set vb t_vb=
+set ruler
+set incsearch
+set virtualedit=all
+set nu
+set nohls
+set lbr
+set foldmethod=manual
+set lines=50 columns=80
+
+set list
+set listchars=tab:>-,trail:-
+
+:nmap ,s :source $MYVIMRC
+:nmap ,v :sp $MYVIMRC
+
+:nmap ,i :echo $CURRENT_INSTANCE
+:nmap ,o :let $CURRENT_INSTANCE=
+
+map ,T :TaskList<CR>
+map ,P :TlistToggle<CR>
+
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+colorscheme desert
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
